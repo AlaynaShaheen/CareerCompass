@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: url('light.jpg');
+      background-size: cover;
+      background-position: center;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .contact-container {
+      width: 80%;
+      max-width: 600px;
+      padding: 40px;
+      background:transparent;
+      backdrop-filter: blur(200px);
+      border-radius: 10px;
+      border: 2px solid rgba(255,255,255,0.8);
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+    .contact-form label {
+      font-weight: bold;
+    }
+    .contact-form button {
+      margin-top: 15px;
+    }
+    .social-icons {
+      font-size: 24px;
+      margin-top: 20px;
+    }
+    .contact-heading {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 20px;
+      color: #333;
+    }
+    .sub-heading {
+      font-size: 24px;
+      color: #333;
+      margin-bottom: 10px;
+    }
+    .star-rating {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 10px;
+    }
+    .star {
+      font-size: 24px;
+      cursor: pointer;
+      color: #ccc;
+      transition: color 0.3s;
+      margin: 0 5px;
+    }
+    .star.active {
+      color: #FFAC33;
+    }
+    .social-icons-heading {
+      font-size: 24px;
+      color: #333;
+      margin-top: 20px;
+    }
+    .social-icon {
+      font-size: 32px;
+      margin: 0 10px;
+      color: #01050a;
+    }
+  </style>
+</head>
+<body>
+  <div class="contact-container">
+    <h1 class="contact-heading">Contact Us</h1>
+    <form id="contactForm" class="contact-form">
+      <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input type="text" class="form-control" id="firstName" name="firstName" required>
+      </div>
+      <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input type="text" class="form-control" id="lastName" name="lastName" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="phoneNumber">Phone Number</label>
+        <input type="tel" class="form-control" id="phoneNumber" name="phoneNumber" required>
+      </div>
+      <div class="form-group">
+        <label for="review">Review</label>
+        <textarea class="form-control" id="review" name="review" rows="4" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="rating">Rate Us</label>
+        <div class="star-rating">
+          <span class="star" data-rating="1">&#9733;</span>
+          <span class="star" data-rating="2">&#9733;</span>
+          <span class="star" data-rating="3">&#9733;</span>
+          <span class="star" data-rating="4">&#9733;</span>
+          <span class="star" data-rating="5">&#9733;</span>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">Submit</button>
+    </form>
+    <div class="social-icons text-center mt-4">
+      <h2 class="social-icons-heading">Social Media</h2>
+      <a href="https://instagram.com/careercompass2024?igshid=ZDdkNTZiNTM=" class="social-icon"><i class="fab fa-instagram"></i></a>
+      <a href="https://twitter.com/CareerComp2025?t=IdGNJA6yIw8YffrJ5lqbxA&s=09" class="social-icon"><i class="fab fa-twitter"></i></a>
+      <a href="https://github.com/CareerCompass2025" class="social-icon"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/career-compass-742650273" class="social-icon"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </div>
+  <script src="https://kit.fontawesome.com/02b6366662.js" crossorigin="anonymous"></script>
+  <script>
+    const contactForm = document.getElementById('contactForm');
+    const stars = document.querySelectorAll('.star');
+
+    stars.forEach(star => {
+      star.addEventListener('click', () => {
+        const rating = parseInt(star.getAttribute('data-rating'));
+        for (let i = 0; i < 5; i++) {
+          if (i < rating) {
+            stars[i].classList.add('active');
+          } else {
+            stars[i].classList.remove('active');
+          }
+        }
+      });
+    });
+
+    contactForm.addEventListener('submit', function (event) {
+      event.preventDefault();
+      // You can add code here to handle form submission, like sending data to a server
+      // For now, let's just log the form data
+      const formData = new FormData(contactForm);
+      for (const [key, value] of formData.entries()) {
+        console.log(key, value);
+      }
+      alert('Form submitted successfully!');
+      contactForm.reset();
+    });
+  </script>
+</body>
+</html>

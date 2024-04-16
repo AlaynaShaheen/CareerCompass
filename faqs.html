@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQS</title>
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: "quicksand",sans-serif;
+    background-color: #fff;
+    color: #1c1c1c;
+}
+section{
+    min-height: 100vh;
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.title{
+    font-size: 2rem;
+    margin: 2rem 0rem;
+}
+.faq{
+    max-width: 700px;
+    margin-top: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #1c1c1c;
+    cursor: pointer;
+}
+.question{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.question h3{
+    font-size: 1.8rem;
+}
+.answer{
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 1.4s ease;
+}
+.answer p{
+    padding-top: 1rem;
+    line-height: 1.6rem;
+    font-size: 1.4rem;
+}
+.faq.active .answer{
+    max-height: 300px;
+    animation: fade 1s ease-in-out;
+}
+@keyframes fade{
+    from{
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+    </style>
+</head>
+<body>
+    <section>
+       <h2 class="title">FAQS</h2>
+       <div class="faq">
+        <div class="question">
+            <h3>What is the purpose of this website?</h3>
+        </div>
+        <div class="answer">
+            <p>
+                This website is designed to provide comprehensive guidance and resources for individuals preparing for [specific topic/subject]. We aim to support you in your preparation journey and help you achieve your goals. 
+            </p>
+        </div>
+       </div>
+
+       <div class="faq">
+        <div class="question">
+            <h3>How can this website help me in preparing for [specific topic/subject]?</h3>
+        </div>
+        <div class="answer">
+            <p>
+                Our website offers a wide range of study materials, practice resources, and expert advice tailored to [specific topic/subject]. You can access comprehensive notes, video tutorials, practice tests, and interactive learning tools to enhance your understanding and proficiency in the subject. 
+            </p>
+        </div>
+       </div>
+
+       <div class="faq">
+        <div class="question">
+            <h3>Are there any recommended study materials or resources available on this website?</h3>
+        </div>
+        <div class="answer">
+            <p>
+                Yes, we provide a curated collection of study materials, including textbooks, reference guides, online articles, and video lectures. These resources are carefully selected to cover the essential topics and ensure a comprehensive understanding of the subject. 
+            </p>
+        </div>
+       </div>
+       
+
+       <div class="faq">
+        <div class="question">
+            <h3>How can I get further assistance or clarification on a specific topic or resource?</h3>
+        </div>
+        <div class="answer">
+            <p>
+                If you require further assistance or have specific questions related to a topic or resource on our website, please feel free to contact our support team. We are dedicated to providing timely and helpful responses to ensure your preparation journey is smooth and successful. 
+            </p>
+        </div>
+       </div>
+
+       <div class="faq">
+        <div class="question">
+            <h3>Where should I start on this website for my preparation?</h3>
+        </div>
+        <div class="answer">
+            <p>
+                We recommend starting with our "Getting Started" section, which provides an overview of the key concepts and topics. You can then explore the study materials and resources available under each topic to build a strong foundation for your preparation.
+            </p>
+        </div>
+       </div>
+
+       <div class="faq">
+        <div class="question">
+            <h3>How often is the content updated on this website?</h3>
+        </div>
+        <div class="answer">
+            <p>
+                We strive to keep our content up to date and relevant. We regularly review and update the study materials, practice resources, and any new developments in the field. You can expect timely updates and additions to ensure you have access to the latest information and resources. 
+            </p>
+        </div>
+       </div>
+    </section>
+    <script>
+        const faqs=document.querySelectorAll(".faq");
+        faqs.forEach(faq=>{
+        faq.addEventListener("click", ()=>{
+        faq.classList.toggle("active");
+        }); 
+      });
+    </script>
+</body>
+</html>

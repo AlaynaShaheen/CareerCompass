@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <style>
+    body::-webkit-scrollbar {
+      display: none;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 400;
+      line-height: 1.5;
+      max-width: 100%;
+      overflow: scroll;
+    }
+
+    .ij {
+      font-size: 20px;
+    }
+
+    .searchbar .search {
+      display: inline-block;
+      margin-left: 250px;
+      border: 0px solid grey;
+      padding: 0px;
+      transition: all 0.15s ease;
+    }
+
+    .searchbar input[type=text] {
+      font-size: 14px;
+      border: 1px solid #888;
+      border-radius: 5px;
+      padding: 10px;
+      width: 15em;
+      margin: 10px 2px 0 0;
+    }
+
+    /* ##### Buttons ##### */
+    .btn-group .button {
+      background-color: #FFF;
+      color: #888;
+      padding: 10px;
+      text-align: center;
+      display: inline-block;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      border: 1px solid #888;
+      border-radius: 5px;
+      margin: 10px 2px;
+    }
+
+    .btn-group {
+      display: inline-block;
+    }
+
+    .btn-group .button:hover {
+      background-color: #888;
+      color: white;
+    }
+
+    .btn-group .button:active,
+    .btn-group .button:focus {
+      background-color: #888;
+      color: white;
+    }
+
+    /* ##### Boxen ##### */
+    .hi {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+
+    .item {
+      max-width: 380px;
+      min-height: 400px;
+      background-color: #FFF;
+      float: left;
+      margin: 7px;
+      position: relative;
+      box-shadow: 0px 4px 6px 0 rgba(0, 0, 0, 0.5);
+      transition: 0.3s;
+      padding: 15px 15px 10px 10px;
+    }
+
+    .imgframe {
+      display: inline-block;
+      position: relative;
+
+      width: 335px;
+      height: 150px;
+      overflow: hidden;
+      border-radius: 5px;
+      background: #FFF;
+
+      -webkit-box-shadow: inset 2px 2px 3px 1px rgba(0, 0, 0, 0.40);
+      -moz-box-shadow: inset 2px 2px 3px 1px rgba(0, 0, 0, 0.40);
+      box-shadow: inset 2px 2px 3px 1px rgba(0, 0, 0, 0.40);
+    }
+
+    .imgframe img {
+      width: 75%;
+      height: auto;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+    }
+
+    .item:hover {
+      box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.5);
+    }
+
+    .titlediv {
+      min-height: 18px;
+      display: block;
+      line-height: 1em;
+      margin: 1em;
+    }
+
+    .title {
+      font-size: 1em;
+      font-weight: 900;
+      color: #888;
+    }
+
+    .type {
+      font-size: 12px;
+      font-weight: 700;
+      margin-left: 10px;
+      padding: 5px 10px;
+      border-radius: 5px;
+      display: inline-block;
+      position: flex;
+      color: #FFF;
+      border: 0px solid #fff;
+      background-color: #888;
+    }
+
+    .tag {
+      bottom: 15px;
+      position: absolute;
+    }
+
+    /* ##### Typografie ##### */
+
+    p {
+      margin: 13px 3px 3px 13px;
+      font-size: 13px;
+      color: #515A5A;
+      line-height: 18px;
+    }
+
+    /* ##### Filter ##### */
+    .filterDiv {
+      display: none;
+    }
+
+    .show {
+      display: flex;
+    }
+
+    .container-btn {
+      margin: 0 30px 20px 25px;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .vl {
+      border-left: 1px solid lightgrey;
+      height: 30px;
+      margin: auto 20px;
+    }
+
+    /*top alert*/
+    .alert {
+      padding: 20px;
+      background-color: #f44336;
+      color: white;
+      opacity: 1;
+      transition: opacity 0.6s;
+      margin-bottom: 15px;
+    }
+
+    .alert.info {
+      background-color: orange;
+    }
+
+    .closebtn {
+      margin-left: 15px;
+      color: white;
+      font-weight: bold;
+      float: right;
+      font-size: 22px;
+      line-height: 20px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .closebtn:hover {
+      color: black;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-secondary" style="width:100% ;">
+    <a class="navbar-brand pr-5" style="padding-left:10px;"><img src="https://i.postimg.cc/0Nfq6nnG/logo.jpg"
+        style="width: 180px;float:left"></a>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto" style="padding-left:500px;">
+        <li class="pl-5 nav-item active">
+          <a class="nav-link" href="#hm">Home</a>
+        </li>
+        <li class="pl-3 nav-item active">
+          <a class="nav-link" href="#abu">About Us</a>
+        </li>
+        <li class="pl-3 nav-item dropdown active">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Services
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="courses.html">Courses</a>
+            <a class="dropdown-item" href="companies.html">Companies</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="internships.html">Internships</a>
+            <a class="dropdown-item" href="jobs.html">Jobs</a>
+          </div>
+        </li>
+        <li class="pl-3 nav-item active">
+          <a class="nav-link" href="contactus.html">Contact Us</a>
+        </li>
+        <li class="pl-3 nav-item active">
+          <a class="nav-link" href="faqs.html">FAQs</a>
+        </li>
+      </ul>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 text-center">
+        <button class="btn btn-primary btn-md mt-3 pl-4 pr-4 mr-3 pb-2 mb-2" style="border-radius:15px"><a
+            href="loginSignup (1).html" style="text-decoration:none;color:white">Login/Signup</a></button>
+
+      </div>
+    </div>
+  </nav>
+  <div class="container-btn">
+    <div class="searchbar">
+      <div class="search">
+        <input type="text" id="searchinput" onkeyup="searchFunction()" placeholder="Search">
+      </div>
+    </div>
+    <div class="vl"></div>
+    <div class="buttons">
+      <div class="btn-group">
+        <button class="button active" onclick="filterSelection('all')"> Show all</button>
+        <button class="button" onclick="filterSelection('Amazon')"> Amazon</button>
+        <button class="button" onclick="filterSelection('Google')"> Google</button>
+        <button class="button" onclick="filterSelection('Microsoft')">Microsoft</button>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Content Card -->
+  <div class="container hi">
+
+    <a href="https://www.google.com/about/careers/applications/jobs/results/112527832824849094-student-researcher-phd-2023?src=Online%2FGoogle%20Website%2FByF&utm_source=Online%20&utm_medium=careers_site%20&utm_campaign=ByF&company=Fitbit&company=Google&company=YouTube&distance=50&employment_type=INTERN&location=India"
+      target="_blank">
+      <div class="item filterDiv Google">
+        <div class="content">
+          <div class="imgframe"><img
+              src="https://tse1.mm.bing.net/th?id=OIP.bx0KqNPSKCXf3rcXFXrKPwHaCu&pid=Api&P=0&h=180"
+              alt="Flickr Creative Commons"></div>
+          <div class="titlediv"><span class="title">Student Researcher, PhD, 2023</span></div>
+          <p><b>Responsibilities:</b>Participate in research to develop solutions for real-world, large-scale problems.
+          </p>
+          </br>
+          <div class="tag"><span class="type">Apply now</span></div>
+        </div>
+      </div>
+    </a>
+
+
+    <a href="https://jobs.careers.microsoft.com/global/en/job/1577327/Data-Scientist---Internship-Opportunities"
+      target="_blank">
+      <div class="item filterDiv Microsoft">
+        <div class="content">
+          <div class="imgframe"><img
+              src="https://tse4.mm.bing.net/th?id=OIP.uHrDUCEbFVxRTdSSRjC5_gHaCu&pid=Api&P=0&h=180" alt="GraphicBurger">
+          </div>
+          <div class="titlediv"><span class="title">Data Scientist</span></div>
+          <p><b>Description:</b>At Microsoft, Interns work on real-world projects in collaboration with teams across the
+            world, while having fun along the way. You’ll be empowered to build community, explore your passions and
+            achieve your goals.</p>
+
+          </br>
+          <div class="tag"><span class="type">Apply now</span></div>
+        </div>
+      </div>
+    </a>
+    <a href="https://www.amazon.jobs/en-gb/jobs/2415130/product-management-intern" target="_blank">
+      <div class="item filterDiv Amazon">
+        <div class="content">
+          <div class="imgframe"><img
+              src="https://tse3.mm.bing.net/th?id=OIP.dYPwlDbhi0a-cA0ubfYeJgHaDH&pid=Api&P=0&h=180" alt="GraphicBurger">
+          </div>
+          <div class="titlediv"><span class="title"><b>Product Management Intern</b></span></div>
+          <p><b>Description:</b>Product Managers (PM) interns at Amazon partner with cross-functional teams to develop
+            ideas from conception to execution, contribute to business models and marketing plans, analyze success
+            metrics, and make recommendations for growth.</p>
+          </br>
+          <div class="tag"><span class="type">Apply now</span></div>
+        </div>
+      </div>
+    </a>
+
+
+    <a href="https://careers.cognizant.com/studentandinterns/global/en/job/00039714235/Programmer-Analyst-Trainee"
+      target="_blank">
+      <div class="item filterDiv Cognizant">
+        <div class="content">
+          <div class="imgframe"><img
+              src="https://tse4.mm.bing.net/th?id=OIP.7qahWimcy2neSZRN1-4EdgHaEI&pid=Api&P=0&h=180" alt="Life of Vids">
+          </div>
+          <div class="titlediv"><span class="title">PROGRAMMER ANALYST TRAINEE</span></div>
+          <p><b>Description:</b>Understanding details of the quality processes and practices followed in the project
+            from different sources.Attend any Knowledge Transition sessions conducted within the project to gain
+            proficiency in project level knowledge.</p>
+          </br>
+          <div class="tag"><span class="type">Apply now</span></div>
+        </div>
+      </div>
+    </a>
+
+    <a href="https://careers.cognizant.com/studentandinterns/global/en/job/00043576146/Trainee-Junior-Data-Analyst"
+      target="_blank">
+      <div class="item filterDiv Cognizant">
+        <div class="content">
+          <div class="imgframe"><img
+              src="https://tse4.mm.bing.net/th?id=OIP.7qahWimcy2neSZRN1-4EdgHaEI&pid=Api&P=0&h=180" alt="Life of Vids">
+          </div>
+          <div class="titlediv"><span class="title">TRAINEE - JUNIOR DATA ANALYST</span></div>
+          <p><b>Description:</b>Perform coding activities on the assigned project with timelines and efficiency.Import
+            uncoded terms in database and export coded medical terms from coding platform.</p>
+          </br>
+          <div class="tag"><span class="type">Apply now</span></div>
+        </div>
+      </div>
+    </a>
+    <a href="https://www.amazon.jobs/en-gb/jobs/2407881/c-software-engineer-amazon-devices-and-services"
+      target="_blank">
+      <div class="item filterDiv Amazon">
+        <div class="content">
+          <div class="imgframe"><img
+              src="https://tse3.mm.bing.net/th?id=OIP.dYPwlDbhi0a-cA0ubfYeJgHaDH&pid=Api&P=0&h=180" alt="GraphicBurger">
+          </div>
+          <div class="titlediv"><span class="title"><b>C++ Software Engineer, Amazon Devices and Services</b></span>
+          </div>
+          <p><b>Description:</b>As a Software Engineer on this team, you will define and build innovative consumer
+            product experiences with a direct impact on the design, architecture, and implementation of flagship
+            products that customers love and use every day.
+          </p>
+          </br>
+          <div class="tag"><span class="type">Apply now</span></div>
+        </div>
+      </div>
+    </a>
+    <a href="https://www.google.com/about/careers/applications/jobs/results?src=Online%2FGoogle%20Website%2FByF&utm_source=Online%20&utm_medium=careers_site%20&utm_campaign=ByF&company=Fitbit&company=Google&company=YouTube&distance=50&employment_type=INTERN&location=India"
+      target="_blank">
+      <div class="item filterDiv Google">
+        <div class="content">
+          <div class="imgframe"><img
+              src="https://tse1.mm.bing.net/th?id=OIP.bx0KqNPSKCXf3rcXFXrKPwHaCu&pid=Api&P=0&h=180"
+              alt="Flickr Creative Commons"></div>
+          <div class="titlediv"><span class="title">Software Engineering Intern, Summer 2024</span></div>
+          <p><b>Description:</b>The Software Engineering Internship program will give you an opportunity to work on
+            computer science solutions, develop scalable, distributed software systems, and also collaborate on
+            multitudes of smaller projects that have universal appeal.
+
+          </p>
+          </br>
+          <div class="tag"><span class="type">Apply now</span></div>
+        </div>
+      </div>
+    </a>
+
+    <a href="https://jobs.careers.microsoft.com/global/en/job/1577325/Software-Engineering---Internship-Opportunities"
+      target="_blank">
+      <div class="item filterDiv Microsoft">
+        <div class="content">
+          <div class="imgframe"><img
+              src="https://tse4.mm.bing.net/th?id=OIP.uHrDUCEbFVxRTdSSRjC5_gHaCu&pid=Api&P=0&h=180" alt="GraphicBurger">
+          </div>
+          <div class="titlediv"><span class="title">Software Engineering</span></div>
+          <p><b>Description:</b>Software engineers (SWEs) work with teammates to solve problems and build innovative
+            software solutions. You are passionate about customers and product quality, and you provide technical
+            guidance to Program Managers as they consider user needs and product requirements.</p>
+
+          </br>
+          <div class="tag"><span class="type">Apply now</span></div>
+        </div>
+      </div>
+    </a>
+    <script>
+      filterSelection("all")
+
+      function filterSelection(c) {
+        var x, i;
+        x = document.getElementsByClassName("filterDiv");
+        if (c == "all") c = "";
+        // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
+        for (i = 0; i < x.length; i++) {
+          w3RemoveClass(x[i], "show");
+          if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+        }
+      }
+
+      // Show filtered elements
+      function w3AddClass(element, name) {
+        var i, arr1, arr2;
+        arr1 = element.className.split(" ");
+        arr2 = name.split(" ");
+        for (i = 0; i < arr2.length; i++) {
+          if (arr1.indexOf(arr2[i]) == -1) {
+            element.className += " " + arr2[i];
+          }
+        }
+      }
+
+      // Hide elements that are not selected
+      function w3RemoveClass(element, name) {
+        var i, arr1, arr2;
+        arr1 = element.className.split(" ");
+        arr2 = name.split(" ");
+        for (i = 0; i < arr2.length; i++) {
+          while (arr1.indexOf(arr2[i]) > -1) {
+            arr1.splice(arr1.indexOf(arr2[i]), 1);
+          }
+        }
+        element.className = arr1.join(" ");
+      }
+
+
+      /*####################### Filter Suche ####################################### */
+
+      function searchFunction() {
+        // Declare variables
+        var input, filter, list, i;
+        input = document.getElementById('searchinput');
+        filter = input.value.toUpperCase();
+        list = document.getElementsByClassName('content');
+
+        // Loop through all list items, and hide those who don't match the search query
+        for (i = 0; i < list.length; i++) {
+          if (list[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+            list[i].parentElement.parentElement.style.display = "";
+          } else {
+            list[i].parentElement.parentElement.style.display = "none";
+          }
+        }
+      }
+
+
+      var close = document.getElementsByClassName("closebtn");
+      var i;
+
+      for (i = 0; i < close.length; i++) {
+        close[i].onclick = function () {
+          var div = this.parentElement;
+          div.style.opacity = "0";
+          setTimeout(function () { div.style.display = "none"; }, 600);
+        }
+      }
+    </script>
+</body>
+
+</html>

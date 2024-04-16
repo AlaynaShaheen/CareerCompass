@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <title>Document</title>
+  <style>
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: .2s linear;
+    font-family: "poppins",sans-serif;
+}
+body{
+    background: #f4f2f2;
+}
+a{
+  text-decoration:none;
+}
+h1{
+    color: #4e4949;
+    font-size: 40px;
+    text-align: center;
+    padding-bottom: 15px;
+    text-shadow: 0 15px 10px rgba(0, 0, 0, 0.2);
+}
+.container{
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(auto-fit,minmax(270px,1fr));
+}
+.box{
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+}
+.box img{
+    height: 50px;
+}
+.box h3{
+    color:#444;
+    padding: 10px 0;
+    font-size: 20px;
+}
+    .card {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      margin-left: 1rem;
+      margin-right: 1rem;
+      border: 2px solid wheat;
+    }
+    
+    .card:hover {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+      transform: translateY(-2px);
+    }
+    .top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 1.5rem;
+    }
+
+    .bot {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      /* border: 3px solid black; */
+      flex-wrap: wrap;
+    }
+
+    .top1 {
+      width: 20rem;
+      height: 6rem;
+      /* border: 3px solid black; */
+      display: flex;
+    }
+
+    .timage {
+      height: 6rem;
+      width: 6rem;
+    }
+
+    img {
+      height: 6rem;
+      width: 6rem;
+      object-fit: contain;
+    }
+
+    .top11 {
+      display: flex;
+      flex-direction: column;
+      /* gap: 1rem; */
+      /* border: 3px solid black; */
+      margin-left: 2rem;
+    }
+
+    .top11 {
+      font-size: 1.3rem;
+    }
+
+    .text {
+      margin: 0.2rem;
+    }
+
+    .text1 {
+      margin: 0.2rem;
+      font-size: 1.1rem;
+    }
+
+    .top2 {
+      width: 13rem;
+      height: 6rem;
+      /* border: 3px solid black; */
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .top2 h3 {
+      font-size: 1.2rem;
+    }
+
+    .top2 p {
+      font-size: 0.9rem;
+      color: rgb(2, 139, 231);
+      margin-top: 0.6rem;
+    }
+
+    .bot1,
+    .bot2,
+    .bot3 {
+      width: 15rem;
+      height: 4rem;
+      /* border: 3px solid black; */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    span {
+      color: rgb(2, 139, 231);
+      font-size: 0.9rem;
+    }
+
+    .bot1 h3,
+    .bot2 h3,
+    .bot3 h3 {
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+
+<body>
+  
+  <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+    <a class="navbar-brand" style="padding-left:10px;"><img src="https://i.postimg.cc/0Nfq6nnG/logo.jpg" style="width: 180px;float:left"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <form class="form-inline my-2 my-lg-0">
+        <input id="searchInput" class="form-control ms-5" type="search" placeholder="Search" aria-label="Search">
+        <!-- <button id="searchButton" class="mr-5 btn btn-primary my-2 my-sm-0" type="submit">Search</button> -->
+      </form>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="pl-3 nav-item active">
+          <a class="nav-link" href="epics b-12.html">Home</a>
+        </li>
+        <li class="pl-3 nav-item active">
+          <a class="nav-link" href="epics b-12.html">About Us</a>
+        </li>       
+        <li class="pl-3 nav-item active">
+          <a class="nav-link" href="contactus.html">Contact Us</a>
+        </li>
+        
+      </ul>
+      
+    </div>
+  </nav>
+  <div class="compin">
+    <div class="card">
+      
+      <div class="top">
+        <div class="top1">
+          <div class="timage">
+            
+            <a href="https://en.wikipedia.org/wiki/IBM" style="text-decoration: none;"><img
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAe1BMVEUAAAD///+8vLx2dnbNzc319fWLi4tdXV3y8vJUVFTo6OgUFBQkJCSpqam4uLiZmZlOTk4zMzMMDAw4ODjU1NRycnJpaWnb29suLi6zs7NjY2NtbW2enp4oKCgYGBgeHh5AQEDj4+PFxcWGhoZISEiTk5N+fn6kpKSJiYmNXRjhAAADaklEQVR4nO3afVuyMBSA8eFLiG9oGoipmSX2/T/hA+k22IbRU4F13b+/YDtsnYoDDIQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgIYEM6fgSYintV8h2G9Lg+ztyLU50d4exor5EV6FSAi/qi837AR6kMQREBgTDR0xrWaY/X6Daxlm4r0cZOLonZbnmblGaCTDwdCp72cZ9gdX9QePl0E2jsjn8jyhI6TfSIbA7etME5fOa1bfOzUk+SCpq+dQvBhMnQc3kmFVoYw+rqVnqXDXUs/r6VnW7mPbzvDq9VCJKzP0VmqWQ4sZnjZOp70Qi0kd+b+pf+dyXKhZUmfAXSMZ4s+4V+r1jTTdej8yyI6d0b770Vzc+pL3aHb5nupUpWPb1wdsVGSiI88u1fTBbG+mxJTp+vZgdhUqvc6wUBBDFTm1iuX8vb3XThEt+0KG+o9uP0SFxuAtZrhQrHNkpPt043YsFZ6Fd2PL+wBbs3VrzgHU0JXSudm1SrtX+IXIQLU+qI3s6d5q7HYbzEzSRcCaveKu+aK4HKNradyXW3vxLDc7v6CW2kq3ljrD5UluJWPVGLWaYby8iH2za7bsVTqWIo8qcrKQm9NIboWB6l42lhfwm+hT5DPn4bJceI/yZF5mj8WJEToXvjrZ2zgP/7eWRsVIfV8aCxGWAwfZNfdGrhafvB4WbxD01eI5u1Eox53azjBVFmbX1XuadFaIDGRkmv9po1Jg9liyUAOlzSWGP2SujMyue92nG53PemMVuCrHnINGroEaU6+W1n7Gz5eJi5Vlaew3kJHpCxnqdRojw5F6wPBe8v2WM/yOtbaJsciWqP333Uc9yY/nY1Mrmjt7wXTnWOYsrIA610vPDVW71rkOXLMJnTbZrc3K/cLIfMOUDbI2R3k5Dz4+h1xu5l/NqE3lT/WdvAq13x/m31xY7w/lhxgDOVauax3baoY1vqc5e3FlGF9GPxUTaSnDztTps+/xjaPl/9/qkIW8XXYCc65m3uMDt6/iu7ZBre/a5BpGaI5yUOP39M1sZEYNGsnwC7W0p5YDKmupEHdDtXl 
+          jV4uProdxuNeDWK9G9YeJc70s3lKGQYXr3wgbz8kL8+hX11Rja5JGMgQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAzD+9CU7/BWP7oAAAAABJRU5ErkJggg=="
+              alt="sorry" srcset="" style="float: left;"></a>
+          </div>
+          <div class="top11">
+            <p class="text"><b>IBM</b></p>
+            <p class="text1">4.2 ⭐</p>
+          </div>
+        </div>
+      
+        <div class="top2">
+          <h3>1.1L <br>
+            <p>Reviews</p>
+          </h3>
+          <h3>33.3T <br>
+            <p>Salaries</p>
+          </h3>
+          <h3>4T <br>
+            <p>Jobs</p>
+          </h3>
+        </div>
+      </div>
+      <div class="bot">
+        <div class="bot1">
+          <h3><b>Location</b><br><span>37 Office Locations</span></h3>
+        </div>
+        <div class="bot2">
+          <h3><b>Global Company Size</b><br><span>10000+ Employees</span></h3>
+        </div>
+        <div class="bot3">
+          <h3><b>Industry</b><br><span>Information Technology Support Service</span></h3>
+        </div>
+      </div>
+    
+    </div>
+    <div class="card">
+      <div class="top">
+        <div class="top1">
+          <div class="timage">
+            <a href="https://en.wikipedia.org/wiki/Tata_Consultancy_Services" style="text-decoration: none;">
+            <img
+              src="https://trendlyne-media-mumbai-new.s3.amazonaws.com/profilepicture/1372_profilepicture.jpg"
+              alt="sorry" srcset="" style="float: left;">
+            </a>
+          </div>
+          <div class="top11">
+            <p class="text"><b>Tata Consultancy Services</b></p>
+            <p class="text1">3.9 ⭐</p>
+          </div>
+        </div>
+        <div class="top2">
+          <h3>1.3L <br>
+            <p>Reviews</p>
+          </h3>
+          <h3>1.3L <br>
+            <p>Salaries</p>
+          </h3>
+          <h3>1.7T<br>
+            <p>Jobs</p>
+          </h3>
+        </div>
+      </div>
+      <div class="bot">
+        <div class="bot1">
+          <h3><b>Location</b><br><span>39 Office Locations</span></h3>
+        </div>
+        <div class="bot2">
+          <h3><b>Global Company Size</b><br><span>10000+ Employees</span></h3>
+        </div>
+        <div class="bot3">
+          <h3><b>Industry</b><br><span>Software Development</span></h3>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="top">
+        <div class="top1">
+          <div class="timage">
+            <a href="https://en.wikipedia.org/wiki/Capgemini" style="text-decoration: none;">
+            <img
+              src="https://likeways.co.in/src/upload/41c4051fecc274bddac27710fd918169.png"
+              alt="sorry" srcset="" style="float: left;">
+            </a>
+          </div>
+          <div class="top11">
+            <p class="text"><b>Capgemini</b></p>
+            <p class="text1">4.0 ⭐</p>
+          </div>
+        </div>
+        <div class="top2">
+          <h3>70.8T <br>
+            <p>Reviews</p>
+          </h3>
+          <h3>46.8T<br>
+            <p>Salaries</p>
+          </h3>
+          <h3>8.6T<br>
+            <p>Jobs</p>
+          </h3>
+        </div>
+      </div>
+      <div class="bot">
+        <div class="bot1">
+          <h3><b>Location</b><br><span>55 Office Locations</span></h3>
+        </div>
+        <div class="bot2">
+          <h3><b>Global Company Size</b><br><span>10000+ Employees</span></h3>
+        </div>
+        <div class="bot3">
+          <h3><b>Industry</b><br><span>Enterprise Software & Network Solutions</span></h3>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="top">
+        <div class="top1">
+          <div class="timage">
+            <a href="https://en.wikipedia.org/wiki/Amazon_(company)" style="text-decoration: none;">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/d/de/Amazon_icon.png"
+              alt="sorry" srcset="" style="float: left;">
+            </a>
+          </div>
+          <div class="top11">
+            <p class="text"><b>Amazon</b></p>
+            <p class="text1">4.1 ⭐</p>
+          </div>
+        </div>
+        <div class="top2">
+          <h3>1.8L <br>
+            <p>Reviews</p>
+          </h3>
+          <h3>43.2T <br>
+            <p>Salaries</p>
+          </h3>
+          <h3>10.6T<br>
+            <p>Jobs</p>
+          </h3>
+        </div>
+      </div>
+      <div class="bot">
+        <div class="bot1">
+          <h3><b>Location</b><br><span>65 Office Locations</span></h3>
+        </div>
+        <div class="bot2">
+          <h3><b>Global Company Size</b><br><span>10000+ Employees</span></h3>
+        </div>
+        <div class="bot3">
+          <h3><b>Industry</b><br><span>Internet & Web Services</span></h3>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="top">
+        <div class="top1">
+          <div class="timage">
+            <a href="https://en.wikipedia.org/wiki/Accenture" style="text-decoration: none;">
+            <img
+              src="https://successinsightsindia.com/wp-content/uploads/2022/11/Accenture.png"
+              alt="sorry" srcset="" style="float: left;">
+            </a>
+          </div>
+          <div class="top11">
+            <p class="text"><b>Accenture</b></p>
+            <p class="text1">4.1 ⭐</p>
+          </div>
+        </div>
+        <div class="top2">
+          <h3>1.5L <br>
+            <p>Reviews</p>
+          </h3>
+          <h3>78.5T <br>
+            <p>Salaries</p>
+          </h3>
+          <h3>27.8T<br>
+            <p>Jobs</p>
+          </h3>
+        </div>
+      </div>
+      <div class="bot">
+        <div class="bot1">
+          <h3><b>Location</b><br><span>37 Office Locations</span></h3>
+        </div>
+        <div class="bot2">
+          <h3><b>Global Company Size</b><br><span>10000+ Employees</span></h3>
+        </div>
+        <div class="bot3">
+          <h3><b>Industry</b><br><span>Business Consulting</span></h3>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="top">
+        <div class="top1">
+          <div class="timage">
+            <a href="https://en.wikipedia.org/wiki/Cognizant" style="text-decoration: none;">
+            <img
+              src="https://s3.amazonaws.com/company-photo.theladders.com/16708/d9681bef-be7a-4787-badb-50f16c328535.jfif"
+              alt="sorry" srcset="" style="float: left;"></a>
+          </div>
+          <div class="top11">
+            <p class="text"><b>Cognizant</b></p>
+            <p class="text1">3.8 ⭐</p>
+          </div>
+        </div>
+        <div class="top2">
+          <h3>86.1T <br>
+            <p>Reviews</p>
+          </h3>
+          <h3>78.6T<br>
+            <p>Salaries</p>
+          </h3>
+          <h3>2T<br>
+            <p>Jobs</p>
+          </h3>
+        </div>
+      </div>
+      <div class="bot">
+        <div class="bot1">
+          <h3><b>Location</b><br><span>27 Office Locations</span></h3>
+        </div>
+        <div class="bot2">
+          <h3><b>Global Company Size</b><br><span>10000+ Employees</span></h3>
+        </div>
+        <div class="bot3">
+          <h3><b>Industry</b><br><span>Information Technology Support Services</span></h3>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="top">
+        <div class="top1">
+          <div class="timage">
+            <a href="https://en.wikipedia.org/wiki/Tech_Mahindra" style="text-decoration: none;">
+            <img
+              src="https://trendlyne-media-mumbai-new.s3.amazonaws.com/profilepicture/1374_profilepicture.png"
+              alt="sorry" srcset="" style="float: left;"></a>
+          </div>
+          <div class="top11">
+            <p class="text"><b>Tech Mahindra</b></p>
+            <p class="text1">3.6 ⭐</p>
+          </div>
+        </div>
+        <div class="top2">
+          <h3>32.2T<br>
+            <p>Reviews</p>
+          </h3>
+          <h3>25.5T<br>
+            <p>Salaries</p>
+          </h3>
+          <h3>424<br>
+            <p>Jobs</p>
+          </h3>
+        </div>
+      </div>
+      <div class="bot">
+        <div class="bot1">
+          <h3><b>Location</b><br><span>30 Office Locations</span></h3>
+        </div>
+        <div class="bot2">
+          <h3><b>Global Company Size</b><br><span>10000+ Employees</span></h3>
+        </div>
+        <div class="bot3">
+          <h3><b>Industry</b><br><span>Information Technology Support Services</span></h3>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="top">
+        <div class="top1">
+          <div class="timage">
+            <a href="https://en.wikipedia.org/wiki/Google" style="text-decoration: none;">
+            <img
+              src="https://www.exchangewire.com/wp-content/uploads/2017/10/google-logo.png"
+              alt="sorry" srcset="" style="float: left;">
+            </a>
+          </div>
+          <div class="top11">
+            <p class="text"><b>Google</b></p>
+            <p class="text1">4.4 ⭐</p>
+          </div>
+        </div>
+        <div class="top2">
+          <h3>45.7T<br>
+            <p>Reviews</p>
+          </h3>
+          <h3>8.4T<br>
+            <p>Salaries</p>
+          </h3>
+          <h3>1.8T<br>
+            <p>Jobs</p>
+          </h3>
+        </div>
+      </div>
+      <div class="bot">
+        <div class="bot1">
+          <h3><b>Location</b><br><span>Headquarters in United States</span></h3>
+        </div>
+        <div class="bot2">
+          <h3><b>Global Company Size</b><br><span>10000+ Employees</span></h3>
+        </div>
+        <div class="bot3">
+          <h3><b>Industry</b><br><span>Internet & Web Services</span></h3>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="top">
+        <div class="top1">
+          <div class="timage">
+            <a href="https://en.wikipedia.org/wiki/Deloitte" style="text-decoration: none;">
+            <img
+              src="https://s3.amazonaws.com/abn-prod/wp-content/uploads/sites/7/2017/07/Deloitte.png"
+              alt="sorry" srcset="" style="float: left;"></a>
+          </div>
+          <div class="top11">
+            <p class="text"><b>Deloitte</b></p>
+            <p class="text1">4.1 ⭐</p>
+          </div>
+        </div>
+        <div class="top2">
+          <h3>1L <br>
+            <p>Reviews</p>
+          </h3>
+          <h3>34T <br>
+            <p>Salaries</p>
+          </h3>
+          <h3>36.6T<br>
+            <p>Jobs</p>
+          </h3>
+        </div>
+      </div>
+      <div class="bot">
+        <div class="bot1">
+          <h3><b>Location</b><br><span>33 Office Locations</span></h3>
+        </div>
+        <div class="bot2">
+          <h3><b>Global Company Size</b><br><span>10000+ Employees</span></h3>
+        </div>
+        <div class="bot3">
+          <h3><b>Industry</b><br><span>Accounting & Tax</span></h3>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="top">
+        <div class="top1">
+          <div class="timage">
+            <a href="https://en.wikipedia.org/wiki/Infosys" style="text-decoration: none;">
+            <img
+              src="https://www.suse.com/c/wp-content/uploads/2018/02/Infosys-rev-logo.png"
+              alt="sorry" srcset="" style="float: left;"></a>
+          </div>
+          <div class="top11">
+            <p class="text"><b>Infosys</b></p>
+            <p class="text1">3.9 ⭐</p>
+          </div>
+        </div>
+        <div class="top2">
+          <h3>96T<br>
+            <p>Reviews</p>
+          </h3>
+          <h3>2L<br>
+            <p>Salaries</p>
+          </h3>
+          <h3>2.5T<br>
+            <p>Jobs</p>
+          </h3>
+        </div>
+      </div>
+      <div class="bot">
+        <div class="bot1">
+          <h3><b>Location</b><br><span>39 Office Locations</span></h3>
+        </div>
+        <div class="bot2">
+          <h3><b>Global Company Size</b><br><span>10000+ Employees</span></h3>
+        </div>
+        <div class="bot3">
+          <h3><b>Industry</b><br><span>Information Technology Support Services</span></h3>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="top">
+        <div class="top1">
+          <div class="timage">
+            <a href="https://en.wikipedia.org/wiki/Microsoft" style="text-decoration: none;">
+            <img
+              src="https://community.fabric.microsoft.com/t5/image/serverpage/image-id/295906i4503DE819AD72BB4/image-size/medium?v=v2&px=400"
+              alt="sorry" srcset="" style="float: left;"></a>
+          </div>
+          <div class="top11">
+            <p class="text"><b>Microsoft</b></p>
+            <p class="text1">4.3 ⭐</p>
+          </div>
+        </div>
+        <div class="top2">
+          <h3>49.6T <br>
+            <p>Reviews</p>
+          </h3>
+          <h3>9.9T<br>
+            <p>Salaries</p>
+          </h3>
+          <h3>1.6T<br>
+            <p>Jobs</p>
+          </h3>
+        </div>
+      </div>
+      <div class="bot">
+        <div class="bot1">
+          <h3><b>Location</b><br><span>60 Office Locations</span></h3>
+        </div>
+        <div class="bot2">
+          <h3><b>Global Company Size</b><br><span>10000+ Employees</span></h3>
+        </div>
+        <div class="bot3">
+          <h3><b>Industry</b><br><span>Computer Hardware Development</span></h3>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="top">
+        <div class="top1">
+          <div class="timage">
+            <a href="https://en.wikipedia.org/wiki/Oracle_Corporation" style="text-decoration: none;">
+            <img
+              src="https://images.softwaresuggest.com/software_logo/1590584202_oracle.png"
+              alt="sorry" srcset="" style="float: left;"></a>
+          </div>
+          <div class="top11">
+            <p class="text"><b>Oracle</b></p>
+            <p class="text1">4.0 ⭐</p>
+          </div>
+        </div>
+        <div class="top2">
+          <h3>49.6T<br>
+            <p>Reviews</p>
+          </h3>
+          <h3>19.4T<br>
+            <p>Salaries</p>
+          </h3>
+          <h3>4.2T<br>
+            <p>Jobs</p>
+          </h3>
+        </div>
+      </div>
+      <div class="bot">
+        <div class="bot1">
+          <h3><b>Location</b><br><span>44 Office Locations</span></h3>
+        </div>
+        <div class="bot2">
+          <h3><b>Global Company Size</b><br><span>10000+ Employees</span></h3>
+        </div>
+        <div class="bot3">
+          <h3><b>Industry</b><br><span>Enterprise Software & Network Solutions</span></h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const searchInput = document.querySelector("#searchInput");
+      const cards = document.querySelectorAll(".card");
+  
+      searchInput.addEventListener("input", function () {
+        const searchTerm = searchInput.value.toLowerCase();
+  
+        cards.forEach((card) => {
+          const cardName = card.querySelector(".text").textContent.toLowerCase();
+  
+          if (cardName.includes(searchTerm)) {
+            card.style.display = "block";
+          } else {
+            card.style.display = "none";
+          }
+        });
+      });
+    });
+  </script>
+  
+  
+  
+</body>
+</html>
